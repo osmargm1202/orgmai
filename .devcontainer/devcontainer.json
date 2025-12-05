@@ -6,10 +6,7 @@
 	},
 	"workspaceFolder": "/workspace",
 	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
-	"remoteUser": "osmar",  // ← Usuario no-root
-	"containerUser": "osmar",
-	"updateRemoteUserUID": true,  // ← Sincroniza UID automáticamente
-  
+	
 	// Personaliza las herramientas de Go
 	"customizations": {
 		"vscode": {

@@ -132,7 +132,7 @@ Las conversaciones se almacenan en `~/.config/orgmai/conversations/` en formato 
 Antes de lanzar
 
 ```
-export GH_TOKEN=$(gh auth token)
+export GH_TOKEN=$(gh auth token) | source .env
 ```
 
 ## 📄 Licencia
