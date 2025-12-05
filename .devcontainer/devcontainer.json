@@ -1,15 +1,8 @@
 {
 	"name": "Go Development Container",
-	"build": {
-		"dockerfile": "Dockerfile"
-	},
-	
-	// Características opcionales. Descomenta las que necesites
-	// "features": {},
-	
-	// Configuración para montar el workspace
+	"dockerComposeFile": "docker-compose.yml",
+	"service": "orgmai-dev",
 	"workspaceFolder": "/workspace",
-	"workspaceMount": "source=${localWorkspaceFolder},target=/workspace,type=bind",
 	
 	// Personaliza las herramientas de Go
 	"customizations": {
@@ -28,7 +21,7 @@
 	},
 	
 	// Comandos a ejecutar después de crear el contenedor
-	"postCreateCommand": "go version && go env",
+	"postCreateCommand": "bash -c 'if [ -n \"$GH_TOKEN\" ]; then echo \"$GH_TOKEN\" | gh auth login --with-token 2>/dev/null || true; fi' && go version && go env",
 	
 	// Configuración de puertos (si necesitas exponer puertos)
 	// "forwardPorts": [8080],
@@ -36,7 +29,8 @@
 	// Variables de entorno
 	"remoteEnv": {
 		"GOPATH": "/go",
-		"PATH": "/usr/local/go/bin:${containerEnv:PATH}"
+		"PATH": "/usr/local/go/bin:${containerEnv:PATH}",
+		"GH_TOKEN": "${localEnv:GH_TOKEN}"
 	},
 	
 	// Comandos a ejecutar cuando el contenedor se inicia

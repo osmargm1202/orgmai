@@ -126,6 +126,15 @@ Las conversaciones se almacenan en `~/.config/orgmai/conversations/` en formato 
 - **Descarga Directa:** [custom.or-gm.com/orgmai](https://custom.or-gm.com/orgmai)
 - **Anthropic API:** [console.anthropic.com](https://console.anthropic.com)
 
+
+## ⚙️ Lanzar en desarrollo
+
+Antes de lanzar
+
+```
+export GH_TOKEN=$(gh auth token)
+```
+
 ## 📄 Licencia
 
 Este proyecto está bajo la licencia **MIT**.

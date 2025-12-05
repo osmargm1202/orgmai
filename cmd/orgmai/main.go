@@ -443,3 +443,5 @@ func cmdPrev() {
 	handleInteractiveChatWithMessages(client, model, messages, title, timestamp)
 }
 
+
+
